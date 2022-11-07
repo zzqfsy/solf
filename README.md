@@ -6,7 +6,7 @@ is the business solution, also shows our logical framework
 ## Design background
 设计背景
 
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/solf-origin.drawio.png)
+![image](https://zzqfsy.github.io/image/solf/solf-origin.drawio.png)
 
 ## Project description
 工程描述
@@ -28,28 +28,28 @@ is the business solution, also shows our logical framework
 ### Register
 #### Business identity register
 业务身份注册
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/Solf%20Degin%20Biz%20Identity%20Register.jpg)
+![image](https://zzqfsy.github.io/image/solf/Solf%20Degin%20Biz%20Identity%20Register.jpg)
 
 #### Domain ability register
 领域能力注册
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/Solf%20Degin%20Doamin%20Ability%20Register.png)
+![image](https://zzqfsy.github.io/image/solf/Solf%20Degin%20Doamin%20Ability%20Register.png)
 
 #### Flow node register
 流程节点注册
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/Solf%20Degin%20Flow%20Register.png)
+![image](https://zzqfsy.github.io/image/solf/Solf%20Degin%20Flow%20Register.png)
 
 ### Processor
 #### Domain ability processor
 领域能力处理
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/Solf%20Design%20Domain%20handler.png)
+![image](https://zzqfsy.github.io/image/solf/Solf%20Design%20Domain%20handler.png)
 
 #### Flow chain processor
 流程链处理
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/Solf%20Design%20Flow%20handler.png)
+![image](https://zzqfsy.github.io/image/solf/Solf%20Design%20Flow%20handler.png)
 
 ### Class diagram
 类图
-![image](https://github.com/zzqfsy/solf/blob/main/wiki/pic/solf-class-graph.drawio.png)
+![image](https://zzqfsy.github.io/image/solf/solf-class-graph.drawio.png)
 
 ## How to use
 使用方式
