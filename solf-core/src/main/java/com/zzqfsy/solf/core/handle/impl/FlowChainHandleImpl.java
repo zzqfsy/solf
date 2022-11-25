@@ -6,11 +6,10 @@ import com.zzqfsy.solf.core.handle.FlowChainHandle;
 import com.zzqfsy.solf.model.flow.FlowChain;
 import com.zzqfsy.solf.model.flow.FlowNode;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
 
 /**
  * @author zzqfsy
@@ -21,9 +20,9 @@ import javax.annotation.Resource;
 @Slf4j
 public class FlowChainHandleImpl implements FlowChainHandle {
 
-    @Resource
+    @Autowired
     private FlowChainContext flowChainContext;
-    @Resource
+    @Autowired
     private DomainAbilityHandle domainAbilityHandle;
 
 

@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzqfsy.solf.core.repository.FlowChainRepository;
 import com.zzqfsy.solf.view.FlowNodeVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,8 +22,11 @@ import java.util.List;
 @RequestMapping("/flowChain")
 public class FlowChainController {
 
-    @Resource
+    @Autowired
     private FlowChainRepository flowChainRepository;
+
+    @Autowired
+    private BizIdentityController bizIdentityController;
 
     @RequestMapping("/config")
     public String config() {

@@ -7,6 +7,7 @@ import com.zzqfsy.solf.service.demo.model.enums.StockInType;
 import com.zzqfsy.solf.service.demo.model.enums.WarehouseType;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -18,6 +19,11 @@ import java.util.concurrent.ConcurrentHashMap;
 @BizIdentitySpec(code = "purchaseOrderBizId2WMS", name = "仓库采购单")
 public class PurchaseOrderBizIdentityConfig2WMS {
 
+    @PostConstruct
+    public void init(){
+        int i =0;
+
+    }
     /**
      * 获取仓库采购单的身份
      *

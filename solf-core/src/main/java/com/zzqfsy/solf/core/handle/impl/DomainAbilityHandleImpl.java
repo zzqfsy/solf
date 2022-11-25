@@ -8,11 +8,11 @@ import com.zzqfsy.solf.core.utils.BeanUtils;
 import com.zzqfsy.solf.model.ability.AbilityMethodObject;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.Map;
@@ -28,9 +28,9 @@ import java.util.Map;
 @Slf4j
 public class DomainAbilityHandleImpl implements DomainAbilityHandle {
 
-    @Resource
+    @Autowired
     private DomainAbilityContext domainAbilityContext;
-    @Resource
+    @Autowired
     private BizIdentityHandle bizIdentityHandle;
 
     /**

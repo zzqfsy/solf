@@ -6,9 +6,9 @@ import com.zzqfsy.solf.core.utils.BeanUtils;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 import com.zzqfsy.solf.model.identity.BizIdentityMethodObject;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
@@ -22,7 +22,7 @@ import java.util.Map;
 @Component
 @Slf4j
 public class BizIdentityHandleImpl implements BizIdentityHandle {
-    @Resource
+    @Autowired
     private BizIdentityContext bizIdentityContext;
 
     @Override

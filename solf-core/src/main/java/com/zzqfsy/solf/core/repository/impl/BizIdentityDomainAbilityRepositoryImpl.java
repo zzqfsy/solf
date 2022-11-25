@@ -7,9 +7,9 @@ import com.zzqfsy.solf.model.ability.AbilityMethodObject;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 import com.zzqfsy.solf.model.identity.BizIdentityMethodObject;
 import com.zzqfsy.solf.view.BizIdentityDomainAbilityVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,9 +27,9 @@ public class BizIdentityDomainAbilityRepositoryImpl implements BizIdentityDomain
     private List<BizIdentityDomainAbilityVo> list = null;
     private Boolean initialized = false;
 
-    @Resource
+    @Autowired
     private BizIdentityContext bizIdentityContext;
-    @Resource
+    @Autowired
     private DomainAbilityContext domainAbilityContext;
 
     @Override

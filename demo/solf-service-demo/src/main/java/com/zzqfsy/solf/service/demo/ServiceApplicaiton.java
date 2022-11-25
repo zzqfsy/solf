@@ -3,6 +3,7 @@ package com.zzqfsy.solf.service.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author zzqfsy
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.zzqfsy.solf.service.demo","com.zzqfsy.solf.core"})
+@EnableAspectJAutoProxy
 public class ServiceApplicaiton {
 
     public static void main(String[] args) {

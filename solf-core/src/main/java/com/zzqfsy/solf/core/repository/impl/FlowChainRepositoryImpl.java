@@ -4,9 +4,9 @@ import com.zzqfsy.solf.core.context.impl.FlowChainContext;
 import com.zzqfsy.solf.core.repository.FlowChainRepository;
 import com.zzqfsy.solf.model.flow.FlowChain;
 import com.zzqfsy.solf.view.FlowNodeVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class FlowChainRepositoryImpl implements FlowChainRepository {
 
 
-    @Resource
+    @Autowired
     private FlowChainContext flowChainContext;
 
     List<FlowNodeVo> list = null;
