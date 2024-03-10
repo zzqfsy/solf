@@ -188,7 +188,7 @@ then browser request http://127.0.0.1:8081/domain/ability/config
 	"bizIdentityMethodObject": {
 		"className": "com.zzqfsy.solf.service.demo.config.bizId.stock.in.PurchaseOrderBizIdentityConfig",
 		"methodName": "getBizIdentity",
-		"parameterType": "com.zzqfsy.solf.service.demo.model.StockInDo",
+		"parameterType": "com.zzqfsy.solf.service.demo.model.StockInCreateCmd",
 		"returnType": "com.zzqfsy.solf.model.identity.BizIdentity"
 	},
 	"domainCode": "stockInNoticeDomain",
@@ -199,7 +199,7 @@ then browser request http://127.0.0.1:8081/domain/ability/config
 	"abilityMethodObject": {
 		"beanClass": "com.zzqfsy.solf.service.demo.domain.event.handler.stock.in.notice.valid.PurchaseOrderStockInValidEventHandler",
 		"methodName": "handler",
-		"parameterType": "com.zzqfsy.solf.service.demo.model.StockInDo",
+		"parameterType": "com.zzqfsy.solf.service.demo.model.StockInCreateCmd",
 		"returnType": "java.lang.Integer",
 		"order": 100
 	}

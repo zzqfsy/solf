@@ -3,7 +3,7 @@ package com.zzqfsy.solf.core.repository.impl;
 import com.zzqfsy.solf.core.context.impl.FlowChainContext;
 import com.zzqfsy.solf.core.repository.FlowChainRepository;
 import com.zzqfsy.solf.model.flow.FlowChain;
-import com.zzqfsy.solf.view.FlowNodeVo;
+import com.zzqfsy.solf.model.view.FlowNodeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

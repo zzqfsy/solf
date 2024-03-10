@@ -3,6 +3,8 @@ package com.zzqfsy.solf.core.handle.impl;
 import com.zzqfsy.solf.core.context.impl.FlowChainContext;
 import com.zzqfsy.solf.core.handle.DomainAbilityHandle;
 import com.zzqfsy.solf.core.handle.FlowChainHandle;
+import com.zzqfsy.solf.model.ability.AbstractAbilityCommandParam;
+import com.zzqfsy.solf.model.ability.AbstractAbilityReturnParam;
 import com.zzqfsy.solf.model.flow.FlowChain;
 import com.zzqfsy.solf.model.flow.FlowNode;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component("flowChainHandle")
 @Slf4j
-public class FlowChainHandleImpl implements FlowChainHandle {
+public class FlowChainHandleImpl<T extends AbstractAbilityCommandParam, E extends AbstractAbilityReturnParam>
+        implements FlowChainHandle {
 
     @Autowired
     private FlowChainContext flowChainContext;
@@ -28,42 +31,42 @@ public class FlowChainHandleImpl implements FlowChainHandle {
 
     @Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
     @Override
-    public <T, E> void transactionalHandle(String flowCode, T t, Class<E> returnClazz) {
-        handle(flowCode, t, returnClazz);
-        return;
-    }
-
-    @Override
-    public <T, E> void handleByNodeTransactional(String flowCode, T t, Class<E> returnClazz) {
+    public AbstractAbilityReturnParam transactionalHandle(String flowCode, AbstractAbilityCommandParam abstractAbilityCommandParam) {
         FlowChain flowChain = flowChainContext.getFlowChainDomainAbilityMap().get(flowCode);
         if (flowChain == null){
-            return;
+            throw new RuntimeException("不存在");
         }
 
         FlowNode flowNode = flowChain.getFirst();
+        AbstractAbilityReturnParam returnParamAbstract = null;
         while (flowNode != null) {
-            domainAbilityHandle.transactionalHandle(
+            returnParamAbstract = domainAbilityHandle.transactionalHandle(
                     flowNode.getDomainName(), flowNode.getAbilityName(),
-                    t, returnClazz);
+                    abstractAbilityCommandParam);
 
             flowNode = flowNode.next;
         }
+
+        return returnParamAbstract;
     }
 
     @Override
-    public <T, E> void handle(String flowCode, T t, Class<E> returnClazz) {
+    public AbstractAbilityReturnParam handle(String flowCode, AbstractAbilityCommandParam abstractAbilityCommandParam) {
         FlowChain flowChain = flowChainContext.getFlowChainDomainAbilityMap().get(flowCode);
         if (flowChain == null){
-            return;
+            throw new RuntimeException("不存在");
         }
 
         FlowNode flowNode = flowChain.getFirst();
+        AbstractAbilityReturnParam returnParamAbstract = null;
         while (flowNode != null) {
-            domainAbilityHandle.handle(
+            returnParamAbstract = domainAbilityHandle.handle(
                     flowNode.getDomainName(), flowNode.getAbilityName(),
-                    t, returnClazz);
+                    abstractAbilityCommandParam);
 
             flowNode = flowNode.next;
         }
+
+        return returnParamAbstract;
     }
 }

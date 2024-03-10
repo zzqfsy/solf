@@ -1,6 +1,7 @@
 package com.zzqfsy.solf.core.handle;
 
 
+import com.zzqfsy.solf.model.ability.AbstractAbilityCommandParam;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 
 /**
@@ -10,7 +11,7 @@ import com.zzqfsy.solf.model.identity.BizIdentity;
  * @email zzqfsy@gmail.com
  * Created on 2022/10/18
  */
-public interface BizIdentityHandle {
+public interface BizIdentityHandle<T extends AbstractAbilityCommandParam> {
 
     /**
      * 业务身份识别
@@ -20,5 +21,5 @@ public interface BizIdentityHandle {
      * @param <T>
      * @return
      */
-    <T> BizIdentity bizIdentityRecognize(String bizIdentityCode, T t);
+    BizIdentity bizIdentityRecognize(String bizIdentityCode, T t);
 }

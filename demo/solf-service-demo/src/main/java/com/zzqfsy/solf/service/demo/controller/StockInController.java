@@ -1,9 +1,10 @@
 package com.zzqfsy.solf.service.demo.controller;
 
-import com.zzqfsy.solf.service.demo.domain.service.StockInDomainService;
-import com.zzqfsy.solf.service.demo.model.StockInDo;
-import com.zzqfsy.solf.service.demo.model.enums.StockInType;
-import com.zzqfsy.solf.service.demo.model.enums.WarehouseType;
+import com.zzqfsy.solf.service.demo.domain.stockIn.domainService.StockInDomainService;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.command.StockInCreateCmd;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.entity.StockInEntity;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.enums.StockInType;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.enums.WarehouseType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,9 +24,9 @@ public class StockInController {
     private StockInDomainService stockInDomainService;
 
     @RequestMapping("/stockIn")
-    public Integer stockIn(@RequestParam(value="name", defaultValue="World") String name) {
+    public StockInEntity stockIn(@RequestParam(value="name", defaultValue="World") String name) {
         return stockInDomainService.create(
-                StockInDo.builder().type(StockInType.PURCHASE_ORDER.getType())
+                StockInCreateCmd.builder().type(StockInType.PURCHASE_ORDER.getType())
                         .warehouseType(WarehouseType.WMS_TYPE.getType())
                         .content(name).build()
         );

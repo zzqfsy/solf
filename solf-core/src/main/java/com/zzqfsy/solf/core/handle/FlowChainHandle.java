@@ -1,42 +1,28 @@
 package com.zzqfsy.solf.core.handle;
 
+import com.zzqfsy.solf.model.ability.AbstractAbilityCommandParam;
+import com.zzqfsy.solf.model.ability.AbstractAbilityReturnParam;
+
 /**
  * @author zzqfsy
  * @email zzqfsy@gmail.com
  * Created on 2022/10/18
  */
-public interface FlowChainHandle {
+public interface FlowChainHandle<T extends AbstractAbilityCommandParam, E extends AbstractAbilityReturnParam> {
 
     /**
      * transactionalHandle
      *
      * @param flowCode
      * @param t
-     * @param returnClazz
-     * @param <T>
-     * @param <E>
      */
-    <T, E> void transactionalHandle(String flowCode, T t, Class<E> returnClazz);
+    E transactionalHandle(String flowCode, T t);
 
     /**
      * handle
      *
      * @param flowCode
      * @param t
-     * @param returnClazz
-     * @param <T>
-     * @param <E>
      */
-    <T, E> void handleByNodeTransactional(String flowCode, T t, Class<E> returnClazz);
-
-    /**
-     * handle
-     *
-     * @param flowCode
-     * @param t
-     * @param returnClazz
-     * @param <T>
-     * @param <E>
-     */
-    <T, E> void handle(String flowCode, T t, Class<E> returnClazz);
+    E handle(String flowCode, T t);
 }

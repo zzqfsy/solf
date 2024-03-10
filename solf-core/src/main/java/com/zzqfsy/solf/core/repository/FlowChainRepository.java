@@ -1,7 +1,7 @@
 package com.zzqfsy.solf.core.repository;
 
 
-import com.zzqfsy.solf.view.FlowNodeVo;
+import com.zzqfsy.solf.model.view.FlowNodeVo;
 
 import java.util.List;
 

@@ -2,9 +2,9 @@ package com.zzqfsy.solf.service.demo.config.bizId.stock.in;
 
 import com.zzqfsy.solf.annotations.identity.BizIdentitySpec;
 import com.zzqfsy.solf.model.identity.BizIdentity;
-import com.zzqfsy.solf.service.demo.model.StockInDo;
-import com.zzqfsy.solf.service.demo.model.enums.StockInType;
-import com.zzqfsy.solf.service.demo.model.enums.WarehouseType;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.command.StockInCreateCmd;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.enums.StockInType;
+import com.zzqfsy.solf.service.demo.domain.stockIn.model.enums.WarehouseType;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -29,16 +29,16 @@ public class PurchaseOrderBizIdentityConfig2WMS {
      *
      * @return
      */
-    public BizIdentity getBizIdentity(StockInDo stockInDo) {
-        if (stockInDo == null) {
+    public BizIdentity getBizIdentity(StockInCreateCmd StockInCreateCmd) {
+        if (StockInCreateCmd == null) {
             return null;
         }
 
-        if (!StockInType.PURCHASE_ORDER.getType().equals(stockInDo.getType())){
+        if (!StockInType.PURCHASE_ORDER.getType().equals(StockInCreateCmd.getType())){
             return null;
         }
 
-        if (!WarehouseType.WMS_TYPE.getType().equals(stockInDo.getWarehouseType())){
+        if (!WarehouseType.WMS_TYPE.getType().equals(StockInCreateCmd.getWarehouseType())){
             return null;
         }
 

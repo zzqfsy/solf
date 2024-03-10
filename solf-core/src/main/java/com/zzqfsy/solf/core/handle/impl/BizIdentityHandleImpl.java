@@ -3,6 +3,7 @@ package com.zzqfsy.solf.core.handle.impl;
 import com.zzqfsy.solf.core.context.impl.BizIdentityContext;
 import com.zzqfsy.solf.core.handle.BizIdentityHandle;
 import com.zzqfsy.solf.core.utils.BeanUtils;
+import com.zzqfsy.solf.model.ability.AbstractAbilityCommandParam;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 import com.zzqfsy.solf.model.identity.BizIdentityMethodObject;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ public class BizIdentityHandleImpl implements BizIdentityHandle {
     private BizIdentityContext bizIdentityContext;
 
     @Override
-    public <T> BizIdentity bizIdentityRecognize(String bizIdentityCode, T t) {
+    public BizIdentity bizIdentityRecognize(String bizIdentityCode, AbstractAbilityCommandParam t) {
         //参数校验
         if (bizIdentityCode == null || bizIdentityCode.length() == 0 || t == null) {
             return null;

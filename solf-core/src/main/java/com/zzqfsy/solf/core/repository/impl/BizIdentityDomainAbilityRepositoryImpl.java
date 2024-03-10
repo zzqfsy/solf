@@ -6,7 +6,7 @@ import com.zzqfsy.solf.core.repository.BizIdentityDomainAbilityRepository;
 import com.zzqfsy.solf.model.ability.AbilityMethodObject;
 import com.zzqfsy.solf.model.identity.BizIdentity;
 import com.zzqfsy.solf.model.identity.BizIdentityMethodObject;
-import com.zzqfsy.solf.view.BizIdentityDomainAbilityVo;
+import com.zzqfsy.solf.model.view.BizIdentityDomainAbilityVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

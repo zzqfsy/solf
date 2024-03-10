@@ -1,8 +1,7 @@
 /**
- * 入库领域层包
- *
+ * Dubbo扩展支持包
  * @author zzqfsy
  * @email zzqfsy@gmail.com
  * Created on 2022/10/18
  */
-package com.zzqfsy.solf.service.demo.domain;
+package com.zzqfsy.solf.core.support.spi.dubbo;
