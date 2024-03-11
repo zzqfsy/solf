@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StockInEntity extends AbstractAbilityReturnParam {
+public class StockInEntity extends AbstractAbilityReturnParam implements Serializable {
 
     /**
      * 编号

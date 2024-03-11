@@ -70,11 +70,11 @@ public class AbilityHandleImpl<T extends AbstractAbilityCommandParam, E extends 
                 log.warn("请求方法参数类型不同: " + abilityMethodObject.getParameterType().getName() + "!= " + t.getClass().getName());
                 continue;
             }
-            // 请求方法返回值类型不同
-            if (!abilityMethodObject.getReturnType().isAssignableFrom(AbstractAbilityReturnParam.class)) {
-                log.warn("请求方法返回值类型不同: " + abilityMethodObject.getReturnType().getName() + "!= " + AbstractAbilityReturnParam.class.getName());
-                continue;
-            }
+            // todo zzq 请求方法返回值类型不同
+//            if (!abilityMethodObject.getReturnType().isAssignableFrom(AbstractAbilityReturnParam.class)) {
+//                log.warn("请求方法返回值类型不同: " + abilityMethodObject.getReturnType().getName() + "!= " + AbstractAbilityReturnParam.class.getName());
+//                continue;
+//            }
 
             // 业务身份 match biz identity
             AbilitySpec abilitySpec = abilityMethodObject.getAbilitySpec();

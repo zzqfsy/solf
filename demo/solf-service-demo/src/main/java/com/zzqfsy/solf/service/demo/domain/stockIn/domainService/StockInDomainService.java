@@ -16,4 +16,6 @@ public interface StockInDomainService {
      * @return
      */
     StockInEntity create(StockInCreateCmd StockInCreateCmd);
+
+    StockInEntity createFlow(StockInCreateCmd build);
 }

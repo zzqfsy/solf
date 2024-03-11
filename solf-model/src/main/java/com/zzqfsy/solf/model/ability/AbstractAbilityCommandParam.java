@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class AbstractAbilityCommandParam implements Serializable {
+public abstract class AbstractAbilityCommandParam implements Serializable {
 
     /**
      * 业务身份

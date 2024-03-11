@@ -31,4 +31,13 @@ public class StockInController {
                         .content(name).build()
         );
     }
+
+    @RequestMapping("/stockInFlow")
+    public StockInEntity stockInFlow(@RequestParam(value="name", defaultValue="World") String name) {
+        return stockInDomainService.createFlow(
+                StockInCreateCmd.builder().type(StockInType.PURCHASE_ORDER.getType())
+                        .warehouseType(WarehouseType.WMS_TYPE.getType())
+                        .content(name).build()
+        );
+    }
 }
