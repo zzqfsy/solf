@@ -78,15 +78,15 @@ public class FlowChainContext implements ContextRegister {
                 LinkedList<AbilityMethodObject> abilityMethodObjects = domainAbilityContext.getDomainAbilityBeanMethodMap()
                         .get(domainName).get(abilityName);
                 if (CollectionUtils.isEmpty(abilityMethodObjects)) {
-                    log.error("启动异常，注册流程异常，能力方法注册为空");
+                    log.error("启动异常，注册流程异常，能力方法注册为空 {} {}", domainName, abilityName);
                     throw new RuntimeException("启动异常，注册流程异常，能力方法注册为空");
                 }
                 if (!abilityMethodObjects.get(0).getParameterType().isAssignableFrom(parameterType) ||
                         (!(Void.TYPE.isAssignableFrom(returnType)) &&
                         !abilityMethodObjects.get(0).getReturnType().isAssignableFrom(returnType))
                 ) {
-                    log.error("启动异常，注册流程异常信息: \n{} {}\n\n{}", parameterType, returnType,
-                            abilityMethodObjects.get(0));
+                    log.error("启动异常，注册流程异常信息: {} {} {} {} {}", parameterType, returnType,
+                            abilityMethodObjects.get(0), domainName, abilityName);
                     throw new RuntimeException("启动异常，注册流程异常");
 
                 }
